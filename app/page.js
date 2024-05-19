@@ -1,5 +1,7 @@
 const fs = require("fs");
 import AppBar from '@/components/AppBar';
+import Image from 'next/image';
+
 
 function SignINButton() {
   return (
@@ -33,7 +35,7 @@ export default async function Home() {
             return <div className='flex flex-col mt-2' key={index}><div className='flex flex-row justify-center mx-2'>
               <a href={`/${channel['id']}`} className="flex flex-col  items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-full hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                 <div className='flex flex-row'>
-                  <img src={channel.image} className='max-w-42 max-h-42 min-w-32' />
+                  <Image src={channel.image} className='max-w-42 max-h-42 min-w-32' alt=''/>
                   <div className='flex flex-col'>
                     <div className="flex flex-col justify-between p-4 leading-normal">
                       <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{channel.name}</h5>

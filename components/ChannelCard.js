@@ -4,7 +4,7 @@ export default function ChannelCard({ image, title, description, socialLinks }) 
     return <div className=' flex flex-col px-5 py-8'>
         <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
-                <img className="rounded-t-lg min-w-96 min-h-96" src={image} alt="" />
+                <Image className="rounded-t-lg min-w-96 min-h-96" src={image} alt="" />
             </a>
             <div className="p-5">
                 <a href="#">
@@ -17,7 +17,7 @@ export default function ChannelCard({ image, title, description, socialLinks }) 
                         style={{
                             backgroundColor: typeof d.bgcolor === "string" ? d.bgcolor : null
                         }}>
-                        <Image src={d.icon} height={20} width={20} />
+                        <Image alt="" src={d.icon} height={20} width={20} />
                         {d.title.length > 1 &&
                             <span className='ml-3'>{d.title}</span>}
                     </a>

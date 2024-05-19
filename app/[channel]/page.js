@@ -6,7 +6,8 @@ import NoVideos from "@/components/NoVideos";
 import { useEffect, useState } from "react";
 
 export default function ChannelPage({ params }) {
-    let hash = params.channel;    const [channelResponse, setChannelResponse] = useState();
+    let hash = params.channel;
+    const [channelResponse, setChannelResponse] = useState();
     const thumbImage = channelResponse?.thumbnails[channelResponse.thumbnails.length - 1].url;
     const localdata = channelResponse?.moreData;
 
@@ -16,7 +17,7 @@ export default function ChannelPage({ params }) {
             .then(data => {
                 setChannelResponse(data);
             });
-    }, [])
+    }, [hash])
 
     return <>
         <div className="bg-white dark:bg-slate-700 h-full">

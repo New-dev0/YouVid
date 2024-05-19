@@ -16,24 +16,26 @@ export default function SessionPage() {
     const [started, setStarted] = useState();
     const [prompt, setPrompt] = useState();
 
-    async function fetchMessage() {
-        const req = await fetch(
-            `http://localhost:8000/message`,
-            {
-                method: "POST",
-                body: JSON.stringify({
-                    "message": text,
-                    "sessionId": sessionId
-                })
-            });
-        const response = await req.json();
-        setData(response?.data);
-    }
 
     useEffect(() => {
+        async function fetchMessage() {
+            const req = await fetch(
+                `http://localhost:8000/message`,
+                {
+                    method: "POST",
+                    body: JSON.stringify({
+                        "message": text,
+                        "sessionId": sessionId
+                    })
+                });
+            const response = await req.json();
+            setData(response?.data);
+        }
+
+
         if (text) fetchMessage();
     }, [
-        text
+        text, sessionId
     ]);
 
     async function startSession() {
@@ -52,7 +54,7 @@ export default function SessionPage() {
     }
 
     return <>
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <script async src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         <div className="flex flex-col justify-center items-center dark:bg-slate-800">
             <main className="flex flex-col items-center w-full  pb-20">
 

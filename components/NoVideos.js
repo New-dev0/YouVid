@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Amatic_SC } from "next/font/google"
 
 const font = Amatic_SC({
@@ -10,7 +11,7 @@ export default function Component() {
         <div className="flex flex-col min-w-96 max-h-96 self-center min-h-36 justify-center align-middle p-4 leading-normal bg-slate-600 border-b"
             style={{ borderRadius: 30 }}>
                 <div className="flex flex-row justify-center">
-                <img src="https://img.icons8.com/?size=100&id=19318&format=png" height={100} width={100}
+                <Image alt="" src="https://img.icons8.com/?size=100&id=19318&format=png" height={100} width={100}
             />
 
                 </div>
