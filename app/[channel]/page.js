@@ -35,3 +35,7 @@ export default function ChannelPage({ params }) {
         </div>
     </>
 }
+
+function generateStaticParams() {
+    return 
+}
